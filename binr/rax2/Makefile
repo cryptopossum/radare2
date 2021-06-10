@@ -8,3 +8,9 @@ include ../../shlr/java/deps.mk
 include ../../shlr/gdb/deps.mk
 
 LDFLAGS+=$(LINK)
+
+LINKTO+=../../libr/util/libr_util.a
+LINKTO+=../../libr/main/libr_main.a
+
+wasi:
+	$(CC) -o rax2.wasm rax2.c -I ../../libr/include -I../../shlr/sdb/src $(LINKTO)
