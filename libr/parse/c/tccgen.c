@@ -67,7 +67,7 @@ static void type_decl(CType *type, AttributeDef *ad, int *v, int td);
 static void parse_expr_type(CType *type);
 static void decl_initializer(CType *type, unsigned long c, int first, int size_only);
 static void decl_initializer_alloc(CType *type, AttributeDef *ad, int r, int has_init, int v, char *asm_label, int scope);
-// static int decl0(int l, int is_for_loop_init);
+static int decl0(int l, int is_for_loop_init);
 static void expr_eq(void);
 static void unary_type(CType *type);
 static int is_compatible_parameter_types(CType *type1, CType *type2);
@@ -313,7 +313,7 @@ ST_FUNC Sym *sym_push(int v, CType *type, int r, long long c) {
 	return s;
 }
 
-#if 0
+#if 1
 /* push a global identifier */
 ST_FUNC Sym *global_identifier_push(int v, int t, long long c) {
 	Sym *s, **ps;
@@ -2963,7 +2963,7 @@ no_alloc:
 	;
 }
 
-#if 0
+#if 1
 /* parse an old style function declaration list */
 /* XXX: check multiple parameter */
 static void func_decl_list(Sym *func_sym) {
@@ -3020,7 +3020,7 @@ static void func_decl_list(Sym *func_sym) {
 }
 #endif
 
-#if 0
+#if 1
 /* 'l' is VT_LOCAL or VT_CONST to define default storage type */
 static int decl0(int l, int is_for_loop_init) {
 	int v, has_init, r;
